@@ -12,7 +12,8 @@ module CurrencyScoop
 
     def request_currencies
       client = CurrencyScoop::Api::Client.new
-      client.currencies(@currency_type)
+      list_of_currencies = client.currencies(@currency_type)['response']
+      debugger
     end
   end
 end
