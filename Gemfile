@@ -31,6 +31,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem "standard"
+  gem "solargraph"
 end
 
 group :development do
