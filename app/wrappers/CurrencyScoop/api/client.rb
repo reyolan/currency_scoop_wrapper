@@ -4,7 +4,7 @@ module CurrencyScoop
       BASE_URL = 'https://newton.now.sh/api/v2'.freeze
       AUTHENTICATION = "api_key=#{Rails.application.credentials.currency_scope_token}".freeze
 
-      def currency_rates(base_currency:)
+      def currency_rates(base_currency)
         send_request("/latest?#{AUTHENTICATION}&base=#{base_currency}")
       end
 
@@ -14,7 +14,7 @@ module CurrencyScoop
         send_request("/latest?#{AUTHENTICATION}&base=#{base_currency}&symbols=#{symbols}")
       end
 
-      def supported_currencies(currency_type:)
+      def currencies(currency_type)
         send_request("/currencies?#{AUTHENTICATION}&type=#{currency_type}")
       end
 
