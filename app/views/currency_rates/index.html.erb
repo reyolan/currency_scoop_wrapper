@@ -2,12 +2,21 @@
 <%= link_to 'Currencies', currencies_path %>
 <p>Date: <%= @currency_rates_data.date %></p>
 <p>Base Currency: <%= @currency_rates_data.base %></p>
+<%= form_with scope: :currency_rate, url: currency_rates_path, class: 'bg-slate-200 rounded-md p-4' do |f| %>
+  <%= f.label :base_currency, 'Base Currency:' %>
+  <%= f.text_field :base_currency %>
+  <p> Leave symbols blank, if you want see all the conversion rate. </p>
+  <p> To show specific currency exchange rate, input its currency code separated by comma (e.g. USD,PHP,AUD). </p>
+  <%= f.label :symbols, 'Currency Code:'%>
+  <%= f.text_field :symbols %>
+  <%= f.submit 'Search' %>
+<% end %>
 <div class='overflow-auto h-3/6 w-fit'>
   <table>
     <thead>
       <tr>
         <th>Currency Code</th>
-        <th>Conversion Rate</th>
+        <th>Conversion Rate (=1<%=@currency_rates_data.base%>)</th>
       </tr>
     </thead>
     <tbody>

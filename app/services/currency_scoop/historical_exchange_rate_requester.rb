@@ -1,6 +1,6 @@
 module CurrencyScoop
   class HistoricalExchangeRateRequester < ApplicationService
-    def initialize(base_currency:, date:, symbols:)
+    def initialize(base_currency, date, symbols)
       @base_currency = base_currency
       @date = date
       @symbols = symbols

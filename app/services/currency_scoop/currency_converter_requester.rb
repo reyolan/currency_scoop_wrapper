@@ -1,6 +1,6 @@
 module CurrencyScoop
   class CurrencyConverterRequester < ApplicationService
-    def initialize(from_currency_code:, to_currency_code:, amount:)
+    def initialize(from_currency_code, to_currency_code, amount)
       @from_currency_code = from_currency_code
       @to_currency_code = to_currency_code
       @amount = amount

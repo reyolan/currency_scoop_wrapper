@@ -1,6 +1,6 @@
 class ApplicationService
-  def self.call(*args, &block)
+  def self.call(*args)
     # creates new instance with the arguments passed and calls the call method on the instance
-    new(*args, &block).call
+    new(*args).call
   end
 end
