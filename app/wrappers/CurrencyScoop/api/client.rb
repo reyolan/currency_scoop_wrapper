@@ -17,9 +17,6 @@ module CurrencyScoop
       end
 
       def historical_exchange_rate(base_currency:, date:, symbols:)
-        # %2C is comma
-        # symbols should be an array separated by comma?
-        # send_request("historical?#{AUTHENTICATION}&base=#{base_currency}&date=#{date}&symbols=#{symbols}")
         send_request(path_to_resource: 'historical', params: { base: base_currency, date:, symbols: })
       end
 
