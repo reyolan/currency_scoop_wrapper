@@ -1,6 +1,7 @@
 class CurrencyRatesController < ApplicationController
   def index
     @currency_rates_data = CurrencyScoop::CurrencyRatesRequester.call(params[:base], params[:symbols])
+    @currency_codes = CurrencyScoop::CurrenciesRequester.call('fiat').fiats.keys
   end
 
   def create
@@ -10,7 +11,7 @@ class CurrencyRatesController < ApplicationController
   private
 
   def currency_rate_params
-    currency_params = params.require(:currency_rate).permit(:base, :symbols)
+    currency_params = params.require(:currency_rate).permit(:base, symbols: [])
     currency_params.delete_if { |_, value| value.blank? }
   end
 end

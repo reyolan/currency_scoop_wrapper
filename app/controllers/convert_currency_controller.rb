@@ -1,4 +1,8 @@
 class ConvertCurrencyController < ApplicationController
+  def new
+    @currency_codes = CurrencyScoop::CurrenciesRequester.call('fiat').fiats.keys
+  end
+
   def create
     redirect_to convert_currency_url(convert_currency_params)
   end

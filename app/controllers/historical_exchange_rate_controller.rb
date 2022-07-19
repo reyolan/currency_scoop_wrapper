@@ -1,5 +1,7 @@
 class HistoricalExchangeRateController < ApplicationController
-  def new; end
+  def new
+    @currency_codes = CurrencyScoop::CurrenciesRequester.call('fiat').fiats.keys
+  end
 
   def create
     redirect_to historical_exchange_rate_url(historical_exchange_rate_params)
@@ -13,6 +15,6 @@ class HistoricalExchangeRateController < ApplicationController
   private
 
   def historical_exchange_rate_params
-    params.require(:historical_exchange_rate).permit(:base, :date, :symbols)
+    params.require(:historical_exchange_rate).permit(:base, :date, symbols: [])
   end
 end

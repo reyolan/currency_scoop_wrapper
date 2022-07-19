@@ -7,11 +7,11 @@
 <%= form_with scope: :convert_currency, url: convert_currency_path, class: 'bg-slate-200 rounded-md p-4 flex flex-col gap-2' do |f| %>
   <div class='flex flex-col'>
     <%= f.label :from, class: 'text-lg' %>
-    <%= f.text_field :from, class: 'rounded-lg' %>
+    <%= f.select :from, @currency_codes, include_blank: 'Select Currency', class: 'rounded-lg'  %>
   </div>
   <div class='flex flex-col'>
     <%= f.label :to, class: 'text-lg'%>
-    <%= f.text_field :to, class: 'rounded-lg' %>
+    <%= f.select :to, @currency_codes, include_blank: 'Select Currency', class: 'rounded-lg'  %>
   </div>
   <div class='flex flex-col mb-2'>
     <%= f.label :amount, 'Amount to Convert', class: 'text-lg'%>
