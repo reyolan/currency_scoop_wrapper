@@ -1,0 +1,13 @@
+<h1>Currency conversion</h1>
+<%= link_to 'Currencies', currencies_path %>
+<%= link_to 'Currency Rates', currency_rates_path %>
+<%= link_to 'Historical Exchange Rate', new_historical_exchange_rate_path %>
+<%= form_with scope: :convert_currency, url: convert_currency_path, class: 'bg-slate-200 rounded-md p-4' do |f| %>
+  <%= f.label :from, 'From:' %>
+  <%= f.text_field :from %>
+  <%= f.label :to, 'To:'%>
+  <%= f.text_field :to %>
+  <%= f.label :amount, 'Amount to Convert:'%>
+  <%= f.number_field :amount %>
+  <%= f.submit 'Convert' %>
+<% end %>

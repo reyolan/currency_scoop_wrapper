@@ -1,0 +1,13 @@
+<h1>Historical Exchange Rate</h1>
+<%= link_to 'Currencies', currencies_path %>
+<%= link_to 'Currency Rates', currency_rates_path %>
+<%= link_to 'Convert Currency', new_convert_currency_path %>
+<%= form_with scope: :historical_exchange_rate, url: historical_exchange_rate_path, class: 'bg-slate-200 rounded-md p-4' do |f| %>
+  <%= f.label :base, 'Base Currency:' %>
+  <%= f.text_field :base %>
+  <%= f.label :date, 'Date:'%>
+  <%= f.date_field :date %>
+  <%= f.label :symbols, 'Symbols to Search:'%>
+  <%= f.text_field :symbols %>
+  <%= f.submit 'See Historical Exchange Rate' %>
+<% end %>

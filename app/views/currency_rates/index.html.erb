@@ -1,10 +1,12 @@
 <h1 class='font-bold text-5xl mb-4'>Currency Rates</h1>
 <%= link_to 'Currencies', currencies_path %>
+<%= link_to 'Convert Currency', new_convert_currency_path %>
+<%= link_to 'Historical Exchange Rate', new_historical_exchange_rate_path %>
 <p>Date: <%= @currency_rates_data.date %></p>
 <p>Base Currency: <%= @currency_rates_data.base %></p>
 <%= form_with scope: :currency_rate, url: currency_rates_path, class: 'bg-slate-200 rounded-md p-4' do |f| %>
-  <%= f.label :base_currency, 'Base Currency:' %>
-  <%= f.text_field :base_currency %>
+  <%= f.label :base, 'Base Currency:' %>
+  <%= f.text_field :base %>
   <p> Leave symbols blank, if you want see all the conversion rate. </p>
   <p> To show specific currency exchange rate, input its currency code separated by comma (e.g. USD,PHP,AUD). </p>
   <%= f.label :symbols, 'Currency Code:'%>

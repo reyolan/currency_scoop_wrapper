@@ -1,0 +1,5 @@
+<p class='font-bold text-3xl'><%= "#{@currency_conversion_data.amount} #{@currency_conversion_data.from}" %> = <%= "#{@currency_conversion_data.value} #{@currency_conversion_data.to}" %></p>
+<%= link_to 'Currencies', currencies_path %>
+<%= link_to 'Currency Rates', currency_rates_path %>
+<%= link_to 'Historical Exchange Rate', new_historical_exchange_rate_path %>
+<%= link_to 'Convert again', new_convert_currency_path, class: 'font-bold text-2xl' %>

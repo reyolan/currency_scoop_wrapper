@@ -1,13 +1,16 @@
 class ConvertCurrencyController < ApplicationController
-  def new
+  def create
+    redirect_to convert_currency_url(convert_currency_params)
   end
 
-  def create
-  end
-  
   def show
-    @convert_currency_result = CurrencyScoop::CurrencyConverterRequester.call(from_currency_code: params[:from],
-                                                                              to_currency_code: params[:to],
-                                                                              amount: params[:amount])
+    @currency_conversion_data = CurrencyScoop::CurrencyConvertRequester.call(params[:from], params[:to],
+                                                                             params[:amount])
+  end
+
+  private
+
+  def convert_currency_params
+    params.require(:convert_currency).permit(:from, :to, :amount)
   end
 end
