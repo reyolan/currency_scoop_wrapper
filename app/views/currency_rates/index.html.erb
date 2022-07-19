@@ -5,8 +5,7 @@
   <%= link_to 'Historical Exchange Rate', new_historical_exchange_rate_path, class: 'bg-blue-300 py-1 px-3 rounded-lg text-xl hover:bg-blue-400 font-medium' %>
 </div>
 <div class='flex flex-wrap gap-4 mt-2 text-lg'>
-  <p>Date: <%= @currency_rates_data.date %></p>
-  <p>Base Currency: <%= @currency_rates_data.base %></p>
+  <p class='text-xl font-medium'>Base Currency: <%= @currency_rates_data.base %></p>
 </div>
 <div class='overflow-auto max-h-60 w-fit'>
   <table class='bg-blue-100'>

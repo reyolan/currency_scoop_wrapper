@@ -12,7 +12,7 @@ module CurrencyScoop
 
     def request_currencies
       client = CurrencyScoop::Api::Client.new
-      currencies = client.currencies(@currency_type)['response']["#{@currency_type}s"]
+      currencies = client.currencies(@currency_type)['response']
       Struct.new(*currencies.keys.map(&:to_sym)).new(*currencies.values)
     end
   end
