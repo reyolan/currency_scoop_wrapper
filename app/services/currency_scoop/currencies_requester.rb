@@ -12,8 +12,8 @@ module CurrencyScoop
 
     def request_currencies
       client = CurrencyScoop::Api::Client.new
-      list_of_currencies = client.currencies(@currency_type)['response']
-      debugger
+      currencies = client.currencies(@currency_type)['response']["#{@currency_type}s"]
+      Struct.new(*currencies.keys.map(&:to_sym)).new(*currencies.values)
     end
   end
 end

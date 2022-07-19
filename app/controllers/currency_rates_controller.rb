@@ -1,9 +1,9 @@
 class CurrencyRatesController < ApplicationController
   def index
-    @currency_rates = CurrencyScoop::CurrencyRatesRequester.call(params[:base])
+    @currency_rates_data = CurrencyScoop::CurrencyRatesRequester.call(params[:base])
   end
 
-  def show
-    @currency_rate = CurrencyScoop::SpecificCurrencyRatesRequester.call(params[:base], params[:symbols])
+  def create
+    redirect_to currency_rates_url(base: params[:base])
   end
 end

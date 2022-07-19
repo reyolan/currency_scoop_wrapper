@@ -1,0 +1,22 @@
+<h1 class='font-bold text-5xl mb-4'>Currency Rates</h1>
+<%= link_to 'Currencies', currencies_path %>
+<p>Date: <%= @currency_rates_data.date %></p>
+<p>Base Currency: <%= @currency_rates_data.base %></p>
+<div class='overflow-auto h-3/6 w-fit'>
+  <table>
+    <thead>
+      <tr>
+        <th>Currency Code</th>
+        <th>Conversion Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @currency_rates_data.rates.each do |currency_rate|%>
+        <tr class='text-center'>
+          <td><%= currency_rate[0] %></td>
+          <td><%= currency_rate[1] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
