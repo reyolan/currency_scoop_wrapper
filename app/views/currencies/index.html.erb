@@ -8,7 +8,7 @@
   <table class='bg-blue-100'>
     <thead>
       <tr class='bg-blue-500'>
-        <th>Currency Code</th>
+        <th class='p-2'>Currency Code</th>
         <th>Currency Name</th>
         <th>Decimal Units</th>
         <th>Countries</th>
@@ -17,7 +17,7 @@
     <tbody>
       <% @fiat_currencies.each do |currency|%>
         <tr class='text-center'>
-          <td><%= currency['currency_code'] %></td>
+          <td class='p-1'><%= currency['currency_code'] %></td>
           <td><%= currency['currency_name'] %></td>
           <td><%= currency['decimal_units'] %></td>
           <td class='break-words'><%= currency['countries'].join(', ') %></td>
