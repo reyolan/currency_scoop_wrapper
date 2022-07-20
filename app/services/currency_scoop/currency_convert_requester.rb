@@ -3,7 +3,7 @@ module CurrencyScoop
     def initialize(from_currency_code, to_currency_code, amount)
       @from_currency_code = from_currency_code
       @to_currency_code = to_currency_code
-      @amount = input_zero_if_empty(amount)
+      @amount = input_zero_if_empty_string(amount)
     end
 
     def call
