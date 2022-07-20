@@ -1,24 +1,50 @@
-# README
+# Currency Scoop Wrapper
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple application to illustrate wrapping of Currency Scoop API.
 
-Things you may want to cover:
+- See latest currency exchange rates
+- See all fiat currencies
+- See historical exchange rates
+- Convert a currency to another currency
 
-* Ruby version
+## Endpoints
 
-* System dependencies
+See [Currency Scoop API Documentation](https://currencyscoop.com/api-documentation) for list of all endpoints.
 
-* Configuration
+Available endpoints in this wrapper only covers the free tier endpoints, as stated below:
 
-* Database creation
+- latest
+- historical
+- currencies
+- convert
 
-* Database initialization
+## Getting started
 
-* How to run the test suite
+To get started with the app, clone the repo and access the created directory:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ git clone git@github.com:reyolan/currency_scoop_wrapper.git
+$ cd currency_scoop_wrapper
+```
 
-* Deployment instructions
+Install the needed gems and node modules:
 
-* ...
+```
+$ bundle install
+$ yarn
+```
+
+Next, setup the database:
+
+```
+$ bin/rails db:setup
+```
+
+Run the app by starting the Rails dev server and Vite.js dev server:
+
+```
+$ bin/rails server
+$ bin/vite dev
+```
+
+You can then visit the site with this URL: http://localhost:3000
