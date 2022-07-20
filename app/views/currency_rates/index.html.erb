@@ -16,10 +16,10 @@
       </tr>
     </thead>
     <tbody>
-      <% @currency_rates_data.rates.each do |currency_rate|%>
+      <% @currency_rates_data.rates.each_pair do |currency_code, currency_value|%>
         <tr class='text-center'>
-          <td class='p-1'><%= currency_rate[0] %></td>
-          <td><%= currency_rate[1] %></td>
+          <td class='p-1'><%= currency_code %></td>
+          <td><%= currency_value %></td>
         </tr>
       <% end %>
     </tbody>

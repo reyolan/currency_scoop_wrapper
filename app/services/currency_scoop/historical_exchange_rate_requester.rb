@@ -15,7 +15,7 @@ module CurrencyScoop
     def request_historical_exchange_rate
       client = CurrencyScoop::Api::Client.new
       exchange_rate = client.historical_exchange_rate(base_currency: @base_currency, date: @date, symbols: @symbols)['response']
-      Struct.new(*exchange_rate.keys.map(&:to_sym)).new(*exchange_rate.values)
+      exchange_rate.to_struct
     end
   end
 end

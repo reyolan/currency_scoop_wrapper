@@ -14,7 +14,7 @@ module CurrencyScoop
     def request_currency_rates
       client = CurrencyScoop::Api::Client.new
       currency_rates = client.currency_rates(base_currency: @base_currency, symbols: @symbols)['response']
-      Struct.new(*currency_rates.keys.map(&:to_sym)).new(*currency_rates.values)
+      currency_rates.to_struct
     end
   end
 end

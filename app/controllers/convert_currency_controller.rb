@@ -1,6 +1,6 @@
 class ConvertCurrencyController < ApplicationController
   def new
-    @currency_codes = CurrencyScoop::CurrenciesRequester.call('fiat').fiats.keys
+    @currency_codes = CurrencyScoop::CurrenciesRequester.call('fiat').fiats.members
   end
 
   def create

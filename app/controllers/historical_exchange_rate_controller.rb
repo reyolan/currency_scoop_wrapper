@@ -1,6 +1,6 @@
 class HistoricalExchangeRateController < ApplicationController
   def new
-    @currency_codes = CurrencyScoop::CurrenciesRequester.call('fiat').fiats.keys
+    @currency_codes = CurrencyScoop::CurrenciesRequester.call('fiat').fiats.members
   end
 
   def create
@@ -15,6 +15,8 @@ class HistoricalExchangeRateController < ApplicationController
   private
 
   def historical_exchange_rate_params
-    params.require(:historical_exchange_rate).permit(:base, :date, symbols: [])
+    params.require(:historical_exchange_rate).permit(:base, :date, symbols: []).tap do |param|
+      param[:symbols].reject!(&:blank?)
+    end
   end
 end

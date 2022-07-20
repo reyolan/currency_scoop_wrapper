@@ -15,12 +15,12 @@
       </tr>
     </thead>
     <tbody>
-      <% @currencies.each_value do |value|%>
+      <% @currencies.each do |currency|%>
         <tr class='text-center'>
-          <td class='p-1'><%= value['currency_code'] %></td>
-          <td><%= value['currency_name'] %></td>
-          <td><%= value['decimal_units'] %></td>
-          <td class='break-words'><%= value['countries'].join(', ') %></td>
+          <td class='p-1'><%= currency.currency_code %></td>
+          <td><%= currency.currency_name %></td>
+          <td><%= currency.decimal_units %></td>
+          <td class='break-words'><%= currency.countries.join(', ') %></td>
         </tr>
       <% end %>
     </tbody>

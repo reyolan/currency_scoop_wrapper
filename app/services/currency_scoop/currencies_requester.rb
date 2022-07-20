@@ -13,7 +13,8 @@ module CurrencyScoop
     def request_currencies
       client = CurrencyScoop::Api::Client.new
       currencies = Rails.cache.fetch('currencies', expires_in: 1.hour) { client.currencies(@currency_type)['response'] }
-      Struct.new(*currencies.keys.map(&:to_sym)).new(*currencies.values)
+      currencies.to_struct
     end
   end
 end
+
