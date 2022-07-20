@@ -2,10 +2,11 @@ module CurrencyScoop
   module Api
     class Client
       BASE_URL = 'https://api.currencyscoop.com/v1/'.freeze
+      ENCODED_COMMA = '%2C'.freeze
       TOKEN = Rails.application.credentials.currency_scoop_token
 
       def currency_rates(base_currency:, symbols:)
-        symbols = symbols.present? ? symbols * ',' : ''
+        symbols = symbols.present? ? symbols * ENCODED_COMMA : ''
         send_request(path_to_resource: 'latest', params: { base: base_currency, symbols: })
       end
 
@@ -18,7 +19,7 @@ module CurrencyScoop
       end
 
       def historical_exchange_rate(base_currency:, date:, symbols:)
-        send_request(path_to_resource: 'historical', params: { base: base_currency, date:, symbols: symbols * ',' })
+        send_request(path_to_resource: 'historical', params: { base: base_currency, date:, symbols: symbols * ENCODED_COMMA })
       end
 
       private
