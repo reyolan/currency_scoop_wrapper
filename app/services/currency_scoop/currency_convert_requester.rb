@@ -19,7 +19,7 @@ module CurrencyScoop
       conversion_data.to_struct
     end
 
-    def input_zero_if_empty(amount)
+    def input_zero_if_empty_string(amount)
       amount.blank? ? '0' : amount
     end
   end
