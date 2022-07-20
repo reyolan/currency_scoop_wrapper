@@ -17,6 +17,7 @@ class HistoricalExchangeRateController < ApplicationController
   def historical_exchange_rate_params
     params.require(:historical_exchange_rate).permit(:base, :date, symbols: []).tap do |param|
       param[:symbols].reject!(&:blank?)
+      param[:symbols] = param[:symbols].join(',')
     end
   end
 end

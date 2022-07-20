@@ -13,6 +13,7 @@ class CurrencyRatesController < ApplicationController
   def currency_rate_params
     params.require(:currency_rate).permit(:base, symbols: []).tap do |param|
       param[:symbols].reject!(&:blank?)
+      param[:symbols] = param[:symbols].join(',')
     end
   end
 end

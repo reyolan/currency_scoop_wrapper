@@ -3,7 +3,7 @@ module CurrencyScoop
     def initialize(from_currency_code, to_currency_code, amount)
       @from_currency_code = from_currency_code
       @to_currency_code = to_currency_code
-      @amount = amount
+      @amount = input_zero_if_empty(amount)
     end
 
     def call
@@ -17,6 +17,10 @@ module CurrencyScoop
       conversion_data = client.convert_currency(from_currency_code: @from_currency_code, to_currency_code: @to_currency_code,
                                                 amount: @amount)['response']
       conversion_data.to_struct
+    end
+
+    def input_zero_if_empty(amount)
+      amount.blank? ? '0' : amount
     end
   end
 end
