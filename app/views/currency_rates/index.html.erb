@@ -1,15 +1,10 @@
 <h1 class='font-bold text-5xl mb-4'>Currency Rates</h1>
-<div class='flex flex-wrap gap-2'>
-  <%= link_to 'Currencies', currencies_path, class: 'bg-blue-300 py-1 px-3 rounded-lg text-xl hover:bg-blue-400 font-medium' %>
-  <%= link_to 'Convert Currency', new_convert_currency_path, class: 'bg-blue-300 py-1 px-3 rounded-lg text-xl hover:bg-blue-400 font-medium' %>
-  <%= link_to 'Historical Exchange Rate', new_historical_exchange_rate_path, class: 'bg-blue-300 py-1 px-3 rounded-lg text-xl hover:bg-blue-400 font-medium' %>
-</div>
 <p class='text-xl font-medium mt-2'>Base Currency: <%= @currency_rates_data.base %></p>
 <div class='flex flex-wrap gap-4 mt-2'>
   <%= form_with scope: :currency_rate, url: currency_rates_path, class: 'bg-slate-200 rounded-md p-4 flex flex-col gap-2 w-64' do |f| %>
     <div class='flex flex-col'>
       <%= f.label :base, 'Base Currency', class: 'text-lg' %>
-      <%= f.select :base, @currency_codes, class: 'rounded-lg', selected: :USD  %>
+      <%= f.select :base, @currency_codes, class: 'rounded-lg', selected: @currency_rates_data.base  %>
     </div>
     <div class='flex flex-col mb-2'>
       <%= f.label :symbols, 'Currency Codes', class: 'text-lg'%>

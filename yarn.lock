@@ -1073,6 +1073,11 @@
   dependencies:
     mini-svg-data-uri "^1.2.3"
 
+"@types/activestorage@^5.2.4":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@types/activestorage/-/activestorage-5.2.4.tgz#6455e5cb183d2d74fb3a19440c6e261b90a8e5de"
+  integrity sha512-JsZHACUmSgi4xCX70c8bM7plVLc7ld6nVVfYjUTNPbPxa3zJURw8hr3T7GisayvOikC1uEBnWAAar57N+BpcHg==
+
 "@types/glob@^7.1.1":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@types/glob/-/glob-7.2.0.tgz#bc1b5bf3aa92f25bd5dd39f35c57361bdce5b2eb"
@@ -1105,6 +1110,16 @@
   version "1.5.5"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.5.tgz#75a2a8e7d8ab4b230414505d92335d1dcb53a6df"
   integrity sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==
+
+"@types/rails__ujs@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@types/rails__ujs/-/rails__ujs-6.0.1.tgz#83c5aa1dad88ca869de05a9523eff58041ab307a"
+  integrity sha512-CVwNOdzTQ9qn6X6HPwx6ikH1T9ueJTdfjwFlXFhGvzXsQuESUksibfSosgxs1D/Q1kVEpjxeXD2RzqJv0Ma5Gw==
+
+"@types/turbolinks@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@types/turbolinks/-/turbolinks-5.2.0.tgz#cdfd3691143ea2f452113c2a06bd12d9a88b25d6"
+  integrity sha512-xEgHb25lj23EaUlsU3Y4KlFH7elhlYINGSnqyn/8zmcMnenY4Idyjk/x9kw1kOoOToY3de9fD8NSwRzNc6f5nw==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"

@@ -1,9 +1,4 @@
-<div class='flex flex-wrap gap-2 items-center'>
+<div class='flex flex-col gap-2 items-center'>
   <p class='font-bold text-3xl'><%= "#{@currency_conversion_data.amount} #{@currency_conversion_data.from}" %> = <%= "#{@currency_conversion_data.value} #{@currency_conversion_data.to}" %></p>
   <%= link_to 'Convert again', new_convert_currency_path, class: 'font-bold text-2xl bg-amber-400 hover:bg-amber-500 py-1 px-3 rounded-lg font-medium' %>
-</div>
-<div class='flex flex-wrap gap-2 mt-4'>
-  <%= link_to 'Currencies', currencies_path, class: 'bg-blue-300 py-1 px-3 rounded-lg text-xl hover:bg-blue-400 font-medium' %>
-  <%= link_to 'Currency Rates', currency_rates_path, class: 'bg-blue-300 py-1 px-3 rounded-lg text-xl hover:bg-blue-400 font-medium' %>
-  <%= link_to 'Historical Exchange Rate', new_historical_exchange_rate_path, class: 'bg-blue-300 py-1 px-3 rounded-lg text-xl hover:bg-blue-400 font-medium' %>
 </div>
