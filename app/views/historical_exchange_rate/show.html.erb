@@ -1,5 +1,5 @@
-<h1 class='font-bold text-5xl mb-2'>Historical Exchange Rate</h1>
-<div class='flex flex-wrap gap-4 text-xl font-medium mt-2'>
+<h1 class='font-bold text-5xl mb-2 text-center'>Historical Exchange Rate</h1>
+<div class='flex flex-wrap gap-2 text-xl font-medium mt-2 justify-center'>
   <p>Date: <%= @historical_exchange_data.date %></p>
   <p>Base Currency: <%= @historical_exchange_data.base %></p>
 </div>
@@ -21,4 +21,4 @@
     </tbody>
   </table>
 </div>
-<%= link_to 'See another historical exchange rate', new_historical_exchange_rate_path, class: 'font-bold text-2xl bg-amber-400 hover:bg-amber-500 py-1 px-3 rounded-lg font-medium mt-4' %>
+<%= link_to 'See another historical exchange rate', new_historical_exchange_rate_path, class: 'font-bold text-2xl bg-amber-400 hover:bg-amber-500 py-1 px-3 rounded-lg font-medium mt-4 text-center' %>

@@ -7,7 +7,7 @@
     </div>
   <% end %>
   <span id="hamburger" class="lg:hidden text-white text-lg font-bold">&#9776;</span>
-  <ul id="list" class="hidden text-white gap-0 w-full lg:w-auto z-10 flex flex-col absolute top-0 right-0 mt-16 px-4 py-2 text-left lg:mr-0 lg:text-left lg:mt-0 lg:flex-row lg:gap-4 lg:flex lg:static">
+  <ul id="list" class="hidden bg-blue-500 text-white gap-0 w-full lg:w-auto z-10 flex flex-col absolute top-0 right-0 mt-16 px-4 py-2 text-left lg:mr-0 lg:text-left lg:mt-0 lg:flex-row lg:gap-4 lg:flex lg:static">
     <li><%= link_to "Conversion", new_convert_currency_path, class: "text-xl lg:text-lg font-medium hover:text-slate-200" %></li>
     <li><%= link_to "Currencies", currencies_path, class: "text-xl lg:text-lg font-medium hover:text-slate-200" %></li>
     <li><%= link_to "Currency Rate", currency_rates_path, class: "text-xl lg:text-lg font-medium hover:text-slate-200" %></li>
