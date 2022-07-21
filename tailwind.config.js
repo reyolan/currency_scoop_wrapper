@@ -1,7 +1,7 @@
 module.exports = {
   content: [
     "./app/helpers/**/*.rb",
-    "./app/frontend/entrypoints/*.js",
+    "./app/frontend/entrypoints/*.ts",
     "./app/views/**/*",
   ],
   theme: {
