@@ -5,7 +5,7 @@ RSpec.describe "Conversion of Currency", type: :system do
   let(:currency_conversion_response) { CurrencyScoop::CurrencyConvertRequester.call(params[:from], params[:to], params[:amount]) }
 
   context 'when user inputs an amount' do
-    it 'results to the desired currency conversion', vcr: { cassette_name: 'convert_with_amount', record: :new_episodes } do
+    it 'results to the desired currency conversion', vcr: { cassette_name: 'convert_with_amount' } do
       visit new_convert_currency_path
 
       select params[:from], from: 'convert_currency[from]'
@@ -22,7 +22,7 @@ RSpec.describe "Conversion of Currency", type: :system do
   end
 
   context 'when user fails to input an amount' do
-    it 'results to an amount of zero', vcr: { cassette_name: 'convert_without_amount', record: :new_episodes } do
+    it 'results to an amount of zero', vcr: { cassette_name: 'convert_without_amount' } do
       visit new_convert_currency_path
 
       select params[:from], from: 'convert_currency[from]'

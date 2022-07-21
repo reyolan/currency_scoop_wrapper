@@ -5,7 +5,7 @@ RSpec.describe "Searching of Historical Exchange Rate", type: :system do
   let(:historical_rates_response) { CurrencyScoop::HistoricalExchangeRateRequester.call(params[:base], params[:date], params[:symbols].join(',')) }
 
   context 'when user selects specific currency codes' do
-    it 'searches rates of selected currency codes', vcr: { cassette_name: 'historical_rates', record: :new_episodes } do
+    it 'searches rates of selected currency codes', vcr: { cassette_name: 'historical_rates' } do
       visit new_historical_exchange_rate_path
       select params[:base], from: 'historical_exchange_rate[base]'
       select params[:symbols][0], from: 'historical_exchange_rate[symbols][]'

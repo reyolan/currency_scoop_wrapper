@@ -6,7 +6,7 @@ RSpec.describe "Searching of Currency Rates", type: :system do
   let(:all_currency_rates_response) { CurrencyScoop::CurrencyRatesRequester.call(params[:base], '') }
 
   context 'when user selects specific currency codes' do
-    it 'searches rates of selected currency codes', vcr: { cassette_name: 'currency_rates', record: :new_episodes } do
+    it 'searches rates of selected currency codes', vcr: { cassette_name: 'currency_rates' } do
       visit currency_rates_path
 
       select params[:base], from: 'currency_rate[base]'
@@ -23,7 +23,7 @@ RSpec.describe "Searching of Currency Rates", type: :system do
   end
 
   context 'when user does not input currency code' do
-    it 'searches rates of all currency codes', vcr: { cassette_name: 'all_currency_rates', record: :new_episodes } do
+    it 'searches rates of all currency codes', vcr: { cassette_name: 'all_currency_rates' } do
       visit currency_rates_path
 
       select params[:base], from: 'currency_rate[base]'
