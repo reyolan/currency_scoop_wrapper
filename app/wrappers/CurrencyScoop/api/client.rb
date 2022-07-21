@@ -23,10 +23,13 @@ module CurrencyScoop
       private
 
       def send_request(path_to_resource:, params: {})
-        connection = Faraday.new(url: BASE_URL, params: { api_key: TOKEN }.merge(params)) do |f|
+        connection = Faraday.new(url: BASE_URL, params: { api_key: TOKEN }) do |f|
+          f.request :url_encoded
+
+          f.response :raise_error
           f.response :json
         end
-        response = connection.get(path_to_resource)
+        response = connection.get(path_to_resource, params)
         response.body
       end
     end
